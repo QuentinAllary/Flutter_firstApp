@@ -4,7 +4,7 @@ class FourthTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Color(0xFF000000),
       body: Container(
         child: Center(
           child: Column(

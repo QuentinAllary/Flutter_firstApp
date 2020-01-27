@@ -4,7 +4,14 @@ class FirstTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      // // Appbar
+      // appBar: AppBar(
+      //   // Title
+      //   title: Text("Using Bottom Navigation Bar"),
+      //   // Set the background color of the App Bar
+      //   backgroundColor: Color(0xFF34373C),
+      // ),
+      backgroundColor: Color(0xFF000000),
       body: Container(
         child: Center(
           child: Column(

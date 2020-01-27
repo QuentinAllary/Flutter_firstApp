@@ -41,13 +41,6 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Appbar
-      appBar: AppBar(
-        // Title
-        title: Text("Using Bottom Navigation Bar"),
-        // Set the background color of the App Bar
-        backgroundColor: Colors.blue,
-      ),
       // Set the TabBar view as the body of the Scaffold
       body: TabBarView(
         // Add tabs as widgets
@@ -58,7 +51,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
       // Set the bottom navigation bar
       bottomNavigationBar: Material(
         // set the color of the bottom navigation bar
-        color: Colors.blue,
+        color: Color(0xFF34373C),
         // set the tab bar as the child of bottom navigation bar
         child: TabBar(
           tabs: <Tab>[

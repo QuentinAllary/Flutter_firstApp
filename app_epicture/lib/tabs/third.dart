@@ -4,7 +4,7 @@ class ThirdTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Color(0xFF000000),
       body: Container(
         child: Center(
           child: Column(
@@ -12,7 +12,7 @@ class ThirdTab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Icon(
-                Icons.airport_shuttle,
+                Icons.add_circle_outline,
                 size: 160.0,
                 color: Colors.white,
               ),
