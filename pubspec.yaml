@@ -1,4 +1,4 @@
-name: my_flutter
+name: epicture_test
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -17,8 +17,17 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  webview_flutter: ^0.3.19+5
   flutter:
     sdk: flutter
+  http: ^0.12.0+4
+  uri: ^0.11.3+1
+  intl: ^0.16.1
+  cached_network_image: ^2.0.0
+  flutter_webview_plugin: ^0.3.10+1
+  transparent_image: ^1.0.0
+  image_picker: ^0.6.3+1
+  pull_to_refresh: ^1.5.8
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

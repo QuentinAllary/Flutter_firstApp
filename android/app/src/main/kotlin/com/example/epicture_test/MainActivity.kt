@@ -1,4 +1,4 @@
-package com.example.my_flutter
+package com.example.epicture_test
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
