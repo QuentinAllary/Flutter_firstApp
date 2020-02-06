@@ -11,8 +11,7 @@ import 'package:transparent_image/transparent_image.dart';
 import 'package:uri/uri.dart';
 import 'package:http/http.dart' as http;
 import 'Profile.dart';
-import 'main.dart' as global;
-import 'Search.dart';
+import 'ImgurLogin.dart' as global;
 
 class Gallery extends StatefulWidget {
   @override
@@ -24,12 +23,12 @@ class _Gallery extends State<Gallery> {
   int page = 0;
 
   _Gallery() {
-    Gallery();
+    gallery();
   }
 
-  Gallery() {
+  gallery() {
     http.get(
-      'https://api.imgur.com/3/Gallery/hot/${page.toString()}',
+      'https://api.imgur.com/3/gallery/hot/${page.toString()}',
       headers: {
         HttpHeaders.authorizationHeader:
             "Bearer " + global.urlParams['access_token']
@@ -44,7 +43,7 @@ class _Gallery extends State<Gallery> {
 
   albumImageVote(String id, String vote) {
     http.post(
-      'https://api.imgur.com/3/Gallery/$id/vote/$vote',
+      'https://api.imgur.com/3/gallery/$id/vote/$vote',
       headers: {
         HttpHeaders.authorizationHeader:
             "Bearer " + global.urlParams['access_token']
@@ -210,7 +209,7 @@ class _Gallery extends State<Gallery> {
                           ),
                           new Row(children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(left: 4, right: 0),
+                              padding: EdgeInsets.only(left: 4, right: 4),
                               child: favButtonState(index),
                             ),
                             Padding(
@@ -244,7 +243,7 @@ class _Gallery extends State<Gallery> {
 
   void _onLoading() async {
     page++;
-    Gallery();
+    gallery();
   }
 
   @override
@@ -259,24 +258,24 @@ class _Gallery extends State<Gallery> {
         ),
         elevation: 0,
         automaticallyImplyLeading: false,
-        // actions: <Widget>[
-        //   IconButton(
-        //     icon: Icon(Icons.search),
-        //     onPressed: () {
-        //       Navigator.of(context).pushNamed('/search');
-        //     },
-        //   ),
-        //   // action button
-        //   Padding(
-        //       child: IconButton(
-        //         icon: Icon(Icons.account_box),
-        //         onPressed: () {
-        //           Navigator.of(context).pushNamed('/account');
-        //         },
-        //       ),
-        //       padding: EdgeInsets.only(right: 15))
-        //   // action button
-        // ],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/search');
+            },
+          ),
+          // action button
+          Padding(
+              child: IconButton(
+                icon: Icon(Icons.account_box),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/profile');
+                },
+              ),
+              padding: EdgeInsets.only(right: 15))
+          // action button
+        ],
       ),
       body: new Center(child: new Builder(builder: (context) {
         if (images == null) {

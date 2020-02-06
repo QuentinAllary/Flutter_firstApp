@@ -10,14 +10,14 @@ import 'package:transparent_image/transparent_image.dart';
 import 'package:intl/intl.dart';
 import 'package:uri/uri.dart';
 import 'package:http/http.dart' as http;
-import 'main.dart' as global;
+import 'ImgurLogin.dart' as global;
 
-class Profile extends StatefulWidget {
+class AccountImages extends StatefulWidget {
   @override
-  _Profile createState() => _Profile();
+  _AccountImages createState() => _AccountImages();
 }
 
-class _Profile extends State<Profile> {
+class _AccountImages extends State<AccountImages> {
   var accAvatar;
   var accImages;
   var accFavs;
@@ -79,7 +79,7 @@ class _Profile extends State<Profile> {
       });
   }
 
-  _Profile() {
+  _AccountImages() {
     http.get(
       'https://api.imgur.com/3/account/${global.urlParams['account_username']}/avatar',
       headers: {
@@ -91,11 +91,11 @@ class _Profile extends State<Profile> {
         accAvatar = json.decode(response.body)["data"]["avatar"];
       });
     });
-    getProfile();
+    getAccountImages();
     getAccountFavs();
   }
 
-  getProfile() {
+  getAccountImages() {
     http.get(
       'https://api.imgur.com/3/account/me/images',
       headers: {
@@ -149,7 +149,7 @@ class _Profile extends State<Profile> {
       'description': description
     }).then((response) {
       setState(() {
-        getProfile();
+        getAccountImages();
       });
     });
   }

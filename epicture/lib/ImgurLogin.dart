@@ -45,10 +45,10 @@ class ImgurLogin extends StatelessWidget {
               withLocalStorage: true,
             ),
         '/home': (_) => new Gallery(),
-        '/search': (_) => new Search(),
+        '/search': (_) => new SearchGallery(),
         // '/add': (_) => new Add(),
         // '/favorite': (_) => new Favorite(),
-        '/profile': (_) => new Profile(),
+        '/profile': (_) => new AccountImages(),
       },
       home: new MyAppHomePage(),
     );

@@ -10,26 +10,26 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:uri/uri.dart';
 import 'package:http/http.dart' as http;
 import 'Gallery.dart';
-import 'main.dart' as global;
+import 'ImgurLogin.dart' as global;
 
-class Search extends StatefulWidget {
+class SearchGallery extends StatefulWidget {
   @override
-  _Search createState() => _Search();
+  _SearchGallery createState() => _SearchGallery();
 }
 
-class _Search extends State<Search> {
+class _SearchGallery extends State<SearchGallery> {
   GetGallery images;
   String searched;
-  String search = 'https://api.imgur.com/3/Gallery/search/';
+  String searchGallery = 'https://api.imgur.com/3/gallery/search/';
   int page = 0;
 
-  void Search(String sort, String window, String search, String type) {
+  void searchImages(String sort, String window, String search, String type) {
     String searchRequest;
     if (type == null)
       searchRequest =
-          search + '$sort/$window/${page.toString()}?q_all=$search';
+          searchGallery + '$sort/$window/${page.toString()}?q_all=$search';
     else
-      searchRequest = search +
+      searchRequest = searchGallery +
           '$sort/$window/${page.toString()}?q_all=$search&q_type=${type.toLowerCase()}';
     http.get(
       searchRequest,
@@ -47,7 +47,7 @@ class _Search extends State<Search> {
 
   albumImageVote(String id, String vote) {
     http.post(
-      'https://api.imgur.com/3/Gallery/$id/vote/$vote',
+      'https://api.imgur.com/3/gallery/$id/vote/$vote',
       headers: {
         HttpHeaders.authorizationHeader:
             "Bearer " + global.urlParams['access_token']
@@ -247,7 +247,7 @@ class _Search extends State<Search> {
 
   void _onLoading() async {
     page++;
-    Search(selectedSort.toLowerCase(), selectedWindow.toLowerCase(),
+    searchImages(selectedSort.toLowerCase(), selectedWindow.toLowerCase(),
         searched, selectedType);
   }
 
@@ -279,7 +279,7 @@ class _Search extends State<Search> {
             setState(() {
               onSearch = false;
               page = 0;
-              Search(
+              searchImages(
                   selectedSort.toLowerCase(),
                   selectedWindow.toLowerCase(),
                   inputText,
@@ -301,7 +301,7 @@ class _Search extends State<Search> {
             child: IconButton(
               icon: Icon(Icons.account_box),
               onPressed: () {
-                Navigator.of(context).pushNamed('/account');
+                Navigator.of(context).pushNamed('/profile');
               },
             ),
             padding: EdgeInsets.only(right: 15))
