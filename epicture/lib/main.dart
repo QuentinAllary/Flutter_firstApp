@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'dart:convert';
-import 'dart:ffi';
-import 'dart:io';
-import 'package:transparent_image/transparent_image.dart';
-import 'package:uri/uri.dart';
-import 'package:http/http.dart' as http;
+import 'package:epicture/views/LoginView.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Add.dart';
-import 'BottomNavbar.dart';
-import 'Favorite.dart';
-import 'Gallery.dart';
-import 'Profile.dart';
-import 'Search.dart';
-import 'ImgurLogin.dart';
+void main() => runApp(Epicture());
 
-main() => runApp(MaterialApp(
-  home: ImgurLogin(),
-  ));
+class Epicture extends StatelessWidget {
+
+  Epicture() {
+    SharedPreferences.setMockInitialValues({});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Epicture',
+      theme: ThemeData(
+        backgroundColor: Color(0xFF000000),
+      ),
+      home: LoginView()  // on va récup l'id etc...
+    );
+  }
+}
