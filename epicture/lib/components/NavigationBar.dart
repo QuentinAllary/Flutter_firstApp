@@ -78,9 +78,10 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                 child: widgetOptions.elementAt(selectedIndex),
             ),
             bottomNavigationBar: CurvedNavigationBar(     // notre super bottombar blob
-              backgroundColor: Colors.white12,
+              backgroundColor: Colors.white12,            // https://pub.dev/packages/curved_navigation_bar
+              animationDuration: const Duration(milliseconds: 200),
               color: Colors.green[400],
-              height: 45,
+              height: 50,
               items: <Widget>[
               Icon(Icons.home, size: 30),
               Icon(Icons.search, size: 30),

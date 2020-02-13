@@ -88,7 +88,7 @@ class _ImageViewerState extends State<ImageViewer> {
 				  width: 30.0,
 				  height: 30.0,
 				  decoration: BoxDecoration(
-				      shape: BoxShape.rectangle,
+				      shape: BoxShape.circle,
 				      image: DecorationImage(
 					  fit: BoxFit.cover,
 					  image: NetworkImage(
