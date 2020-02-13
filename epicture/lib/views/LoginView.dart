@@ -14,7 +14,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
 
   bool isLoggedIn = false;
-  final String clientId = "7962edbdceeb196";
+  final String clientId = "02fde0fac65a1eb";
   final String responseType = "token";
   final webViewPlugin = new FlutterWebviewPlugin();
 

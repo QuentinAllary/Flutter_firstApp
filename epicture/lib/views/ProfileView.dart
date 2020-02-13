@@ -4,7 +4,7 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF000000),
+      backgroundColor: Color(0xFF34373C),
       body: Container(
         child: Center(
           child: Column(

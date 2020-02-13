@@ -37,7 +37,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
         return PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
-                backgroundColor: Colors.black,          // couleur de l'appbar
+                backgroundColor: Color(0xFF1BB76E),          // couleur de l'appbar
                 title: Text(pageNames[selectedIndex]),
                 centerTitle: true,
             ),
@@ -48,7 +48,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
         return PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xFF34373C),
                 title: Text(pageNames[selectedIndex]),
                 centerTitle: true,
                 actions: <Widget>[
@@ -71,42 +71,42 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             return LoginView();
         }
         return Scaffold(
-            backgroundColor: Colors.black,
+            backgroundColor: Color(0xFF34373C),
             resizeToAvoidBottomInset: false,
             appBar: (selectedIndex == 2) ? profileAppBar(context) : defaultAppBar(context),
             body: Center(
                 child: widgetOptions.elementAt(selectedIndex),
             ),
             bottomNavigationBar: CurvedNavigationBar(     // notre super bottombar blob
-              backgroundColor: Colors.white12,            // https://pub.dev/packages/curved_navigation_bar
+              backgroundColor: Color(0xFF0A3E25),            // https://pub.dev/packages/curved_navigation_bar
               animationDuration: const Duration(milliseconds: 200),
-              color: Colors.green[400],
+              color: Color(0xFF1BB76E),
               height: 50,
               items: <Widget>[
-              Icon(Icons.home, size: 30),
-              Icon(Icons.search, size: 30),
-              Icon(Icons.person, size: 30),
+              Icon(Icons.home, size: 30, color: Color(0xFF0A3E25)),
+              Icon(Icons.search, size: 30, color: Color(0xFF0A3E25)),
+              Icon(Icons.person, size: 30, color: Color(0xFF0A3E25)),
               ],
               onTap: _onItemTapped,
               ),
             floatingActionButton: SpeedDial(        // notre petit menu qui flotte
                 marginRight: 10,
-                marginBottom: 5,
+                marginBottom: 20,
                 animatedIcon: AnimatedIcons.menu_close,
                 animatedIconTheme: IconThemeData(size: 22.0),
                 closeManually: false,
                 curve: Curves.bounceIn,
-                overlayColor: Colors.black,
-                overlayOpacity: 0.5,
-                backgroundColor: Colors.green[400], 
-                foregroundColor: Colors.black,        // les traits du bouton 
+                overlayColor: Color(0xFF34373C),
+                overlayOpacity: 0,
+                backgroundColor: Color(0xFF1BB76E), 
+                foregroundColor: Color(0xFF34373C),        // les traits du bouton 
                 elevation: 8.0,
                 shape: CircleBorder(),
                 children: [
                     SpeedDialChild(
                         child: Icon(Icons.camera_alt),
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.black,
+                        backgroundColor: Color(0xFF1BB76E),
+                        foregroundColor: Color(0xFF0A3E25),
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
 
@@ -118,8 +118,8 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                     ),
                     SpeedDialChild(
                         child: Icon(Icons.image),
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.black,
+                        backgroundColor: Color(0xFF1BB76E),
+                        foregroundColor: Color(0xFF0A3E25),
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
 

@@ -121,7 +121,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentSortingOption == 0) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Time"),
                                                 onPressed: () => this.updateSortingOptions(0),
                                             ),
@@ -130,7 +130,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentSortingOption == 1) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Viral"),
                                                 onPressed: () => this.updateSortingOptions(1),
                                             ),
@@ -139,7 +139,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentSortingOption == 2) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Top"),
                                                 onPressed: () => this.updateSortingOptions(2),
                                             ),
@@ -154,7 +154,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentWindowOption == 0) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("All"),
                                                 onPressed: () => this.updateWindowOptions(0),
                                             ),
@@ -163,7 +163,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentWindowOption == 1) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Day"),
                                                 onPressed: () => this.updateWindowOptions(1),
                                             ),
@@ -172,7 +172,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentWindowOption == 2) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Week"),
                                                 onPressed: () => this.updateWindowOptions(2),
                                             ),
@@ -181,7 +181,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentWindowOption == 3) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Month"),
                                                 onPressed: () => this.updateWindowOptions(3),
                                             ),
@@ -190,7 +190,7 @@ class _SearchViewState extends State<SearchView> {
                                             padding: EdgeInsets.only(right: 5),
                                             child: InputChip(
                                                 selected: (this.currentWindowOption == 4) ? true : false,
-                                                selectedColor: Colors.green,
+                                                selectedColor: Color(0xFF1BB76E),
                                                 label: Text("Year"),
                                                 onPressed: () => this.updateWindowOptions(4),
                                             ),
