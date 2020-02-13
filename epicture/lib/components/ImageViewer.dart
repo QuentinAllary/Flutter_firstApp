@@ -27,8 +27,8 @@ class _ImageViewerState extends State<ImageViewer> {
           return Scaffold(
 	      appBar: PreferredSize(
 		  preferredSize: Size.fromHeight(40),
-		  child: AppBar(
-		      backgroundColor: Colors.green,
+		  child: AppBar(      // l'appbar quand tu ouvre une image
+		      backgroundColor: Colors.black,
 		      title: Text(this.widget.image.username),
 		  ),
 	      ),
@@ -55,8 +55,6 @@ class _ImageViewerState extends State<ImageViewer> {
 	  );
       }
       return Card(
-	  semanticContainer: true,
-	  clipBehavior: Clip.antiAliasWithSaveLayer,
 	  child: Container(
 	      child: Column(
 		  children: <Widget>[
@@ -75,9 +73,10 @@ class _ImageViewerState extends State<ImageViewer> {
       );
   }
 
-  Widget createPostHeader(BuildContext context, GalleryImage image) {
+  Widget createPostHeader(BuildContext context, GalleryImage image) { // toute la partie en haut de l'image
       if (this.widget.isFromUser == false) {
 	  return Container(
+      color: Colors.white10,
 	      child: Row(
 		  mainAxisAlignment: MainAxisAlignment.start,
 		  children: <Widget>[
@@ -85,11 +84,11 @@ class _ImageViewerState extends State<ImageViewer> {
 			  padding: EdgeInsets.all(5),
 			  child: Align(
 			      alignment: Alignment.centerLeft,
-			      child: Container(
+			      child: Container(                 // le petit avatar en haut a gauche des post
 				  width: 30.0,
 				  height: 30.0,
 				  decoration: BoxDecoration(
-				      shape: BoxShape.circle,
+				      shape: BoxShape.rectangle,
 				      image: DecorationImage(
 					  fit: BoxFit.cover,
 					  image: NetworkImage(
@@ -103,9 +102,9 @@ class _ImageViewerState extends State<ImageViewer> {
 		      ),
 		      Container(
 			  padding: EdgeInsets.only(left: 10),
-			  child: Text(
-			      image.username,
-			      style: TextStyle(fontWeight: FontWeight.w600),
+			  child: Text(           
+			      image.username,         // le nom
+			      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0), // taille et style du nom
 			  ),
 		      )
 		  ],
@@ -115,7 +114,7 @@ class _ImageViewerState extends State<ImageViewer> {
       return Container();
   }
 
-  Widget createPostImage(BuildContext context, GalleryImage image) {
+  Widget createPostImage(BuildContext context, GalleryImage image) {    // gestion de l'image 
       if (this.widget.isFromUser == true) {
 	  return Card(
 	    elevation: 7,
@@ -131,7 +130,7 @@ class _ImageViewerState extends State<ImageViewer> {
 	      image.cover +
 	      "." +
 	      image.imagesInfo[0].type.split('/')[1],
-	  fit: BoxFit.fill,
+	  fit: BoxFit.scaleDown,
       );
   }
 }

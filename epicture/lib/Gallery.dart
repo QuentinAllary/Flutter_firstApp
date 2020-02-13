@@ -52,25 +52,4 @@ class Gallery extends Imgur {
             return null;
         }
     }
-
-    // Future<Map<String, dynamic>> voteImage(String hash, String voteType) async {
-    //     var sharedPreferences = await SharedPreferences.getInstance();
-
-    //     if (!["up", "down"].contains(voteType))
-    //         return null;
-
-    //     var response = await http.post(
-    //         this.baseUrl + "/gallery/" + hash + "/vote/" + voteType,
-    //         headers: {
-    //             "Authorization": "Bearer " + sharedPreferences.getString("user_access_token")
-    //         }
-    //     );
-
-    //     if (response.statusCode == 200) {
-    //         var json = convert.jsonDecode(response.body);
-    //         return json;
-    //     } else {
-    //         return null;
-    //     }
-    // }
 }

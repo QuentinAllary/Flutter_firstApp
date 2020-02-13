@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:epicture/views/HomeView.dart';
 import 'package:epicture/views/SearchView.dart';
@@ -18,7 +19,7 @@ class NavigationBarWidget extends StatefulWidget {
 
 class _NavigationBarWidgetState extends State<NavigationBarWidget> {
     int selectedIndex = 0;
-    List<String> pageNames = ["Epicture", "Search", "Profile", "add"];
+    List<String> pageNames = ["Epicture", "Search", "Profile"];
     List<Widget> widgetOptions = <Widget>[
         HomeView(),
         SearchView(),
@@ -36,7 +37,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
         return PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
-                backgroundColor: Colors.black54,
+                backgroundColor: Colors.black,          // couleur de l'appbar
                 title: Text(pageNames[selectedIndex]),
                 centerTitle: true,
             ),
@@ -49,9 +50,10 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             child: AppBar(
                 backgroundColor: Colors.black,
                 title: Text(pageNames[selectedIndex]),
+                centerTitle: true,
                 actions: <Widget>[
                     IconButton(
-                        icon: Icon(Icons.forward, color: Colors.white),
+                        icon: Icon(Icons.forward, color: Colors.white60),
                         onPressed: () {
                             setState(() {
                               this.loggedOut = true;
@@ -75,58 +77,48 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             body: Center(
                 child: widgetOptions.elementAt(selectedIndex),
             ),
-            bottomNavigationBar: BottomNavigationBar(
-                items: const <BottomNavigationBarItem>[
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.home),
-                        title: Text('Home'),
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.search),
-                        title: Text('Search'),                      
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.person),
-                        title: Text('Profile'),
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.add),
-                        title: Text('add'),
-                    )
-                ],
-                currentIndex: selectedIndex,
-                selectedItemColor: Colors.green,    // couleur des icons select
-                unselectedItemColor: Colors.black,  // couleur par defaut
-                onTap: _onItemTapped,
-            ),
-            floatingActionButton: SpeedDial(    // notre petit menu qui flotte
-                marginRight: 18,
-                marginBottom: 20,
+            bottomNavigationBar: CurvedNavigationBar(     // notre super bottombar blob
+              backgroundColor: Colors.white12,
+              color: Colors.green[400],
+              height: 45,
+              items: <Widget>[
+              Icon(Icons.home, size: 30),
+              Icon(Icons.search, size: 30),
+              Icon(Icons.person, size: 30),
+              ],
+              onTap: _onItemTapped,
+              ),
+            floatingActionButton: SpeedDial(        // notre petit menu qui flotte
+                marginRight: 10,
+                marginBottom: 5,
                 animatedIcon: AnimatedIcons.menu_close,
                 animatedIconTheme: IconThemeData(size: 22.0),
                 closeManually: false,
                 curve: Curves.bounceIn,
                 overlayColor: Colors.black,
                 overlayOpacity: 0.5,
-                backgroundColor: Colors.green, 
-                foregroundColor: Colors.black,   // les traits du bouton 
+                backgroundColor: Colors.green[400], 
+                foregroundColor: Colors.black,        // les traits du bouton 
                 elevation: 8.0,
                 shape: CircleBorder(),
                 children: [
                     SpeedDialChild(
                         child: Icon(Icons.camera_alt),
                         backgroundColor: Colors.green,
+                        foregroundColor: Colors.black,
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
 
                             Navigator.push(context, MaterialPageRoute(
                                 builder: (context) => NewView(imageData: image)
+                                
                             ));
                         }
                     ),
                     SpeedDialChild(
                         child: Icon(Icons.image),
                         backgroundColor: Colors.green,
+                        foregroundColor: Colors.black,
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
 
@@ -137,6 +129,6 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                     )
                 ],
             ),
-        );
+       );
     }
 }

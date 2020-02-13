@@ -53,7 +53,7 @@ class _LoginViewState extends State<LoginView> {
           appBar: PreferredSize(
               preferredSize: Size.fromHeight(40),
               child: AppBar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Colors.black45,
                   title: Text("Connexion"),
                   centerTitle: true,
               ),

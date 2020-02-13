@@ -32,21 +32,4 @@ class Image extends Imgur {
             return null;
         }
     }
-    // Future<Map<String, dynamic>> favoriteImage(GalleryImage image) async {
-    //     var sharedPreferences = await SharedPreferences.getInstance();
-
-    //     var response = await http.post(
-    //         this.baseUrl + "image/" + image.cover + "/favorite",
-    //         headers: {
-    //             "Authorization": "Bearer " + sharedPreferences.getString("user_access_token")
-    //         }
-    //     );
-
-    //     if (response.statusCode == 200) {
-    //         var json = convert.jsonDecode(response.body);
-    //         return json;
-    //     } else {
-    //         return null;
-    //     }
-    // }
 }

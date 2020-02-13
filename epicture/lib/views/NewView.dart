@@ -31,7 +31,7 @@ class _NewView extends State<NewView> with SingleTickerProviderStateMixin {
             appBar: PreferredSize(
                 preferredSize: Size.fromHeight(40),
                 child: AppBar(
-                    backgroundColor: Colors.lightBlueAccent,
+                    backgroundColor: Colors.black,
                     title: Text("New"),
                     centerTitle: true,
                 ),
@@ -80,17 +80,16 @@ class _NewView extends State<NewView> with SingleTickerProviderStateMixin {
                     ),
                     Container(
                         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 10),
-                        child: AnimatedDefaultTextStyle(
-                            child: Text("Image is uploading..."),
-                            duration: Duration(milliseconds: 200),
-                            style: (this.isAnimated.value >= 22) ? TextStyle(
-                                fontSize: this.isAnimated.value,
-                                color: Colors.lightBlueAccent
-                            ) : TextStyle(
-                                fontSize: this.isAnimated.value,
-                                color: Colors.blueAccent
-                            ),
-                        )
+                        // child: AnimatedDefaultTextStyle(
+                        //     duration: Duration(milliseconds: 200),
+                        //     style: (this.isAnimated.value >= 22) ? TextStyle(
+                        //         fontSize: this.isAnimated.value,
+                        //         color: Colors.lightBlueAccent
+                        //     ) : TextStyle(
+                        //         fontSize: this.isAnimated.value,
+                        //         color: Colors.blueAccent
+                        //     ),
+                        // )
                     )
                 ],
             );
@@ -105,10 +104,10 @@ class _NewView extends State<NewView> with SingleTickerProviderStateMixin {
                     Container(
                         child: TextFormField(
                             decoration: InputDecoration(
-                                labelText: "Title",
+                                labelText: "Titre :",
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(),
                                 ),
                             ),
@@ -118,23 +117,23 @@ class _NewView extends State<NewView> with SingleTickerProviderStateMixin {
                         margin: EdgeInsets.only(top: 5),
                         child: TextFormField(
                             decoration: InputDecoration(
-                                labelText: "Description",
+                                labelText: "Description :",
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(),
                                 )
                             ),
                         ),
                     ),
                     Container(
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                                 Container(
                                     child: IconButton(
-                                        icon: Icon(Icons.add_circle, size: 50, color: Colors.lightBlueAccent),
+                                        icon: Icon(Icons.check_circle_outline, size: 60, color: Colors.green),
                                         onPressed: () {
                                             setState(() {
                                               this.isUploading = true;
@@ -154,7 +153,7 @@ class _NewView extends State<NewView> with SingleTickerProviderStateMixin {
                                 ),
                                 Container(
                                     child: IconButton(
-                                        icon: Icon(Icons.cancel, size: 50, color: Colors.redAccent),
+                                        icon: Icon(Icons.cancel, size: 60, color: Colors.red[800]),
                                         onPressed: () {
                                             Navigator.pop(context);
                                         },
