@@ -35,7 +35,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
 
     Widget defaultAppBar(BuildContext context) {
         return PreferredSize(
-            preferredSize: Size.fromHeight(40),
+            preferredSize: Size.fromHeight(40),               //taille hauteur topbar
             child: AppBar(
                 backgroundColor: Color(0xFF1BB76E),          // couleur de l'appbar
                 title: Text(pageNames[selectedIndex]),
@@ -44,11 +44,11 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
         );
     }
 
-    Widget profileAppBar(BuildContext context) {
+    Widget profileAppBar(BuildContext context) {            //taille hauteur topbar
         return PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
-                backgroundColor: Color(0xFF34373C),
+                backgroundColor: Color(0xFF34373C),       // couleur de l'appbar
                 title: Text(pageNames[selectedIndex]),
                 centerTitle: true,
                 actions: <Widget>[
@@ -83,30 +83,30 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
               color: Color(0xFF1BB76E),
               height: 50,
               items: <Widget>[
-              Icon(Icons.home, size: 30, color: Color(0xFF0A3E25)),
-              Icon(Icons.search, size: 30, color: Color(0xFF0A3E25)),
-              Icon(Icons.person, size: 30, color: Color(0xFF0A3E25)),
+              Icon(Icons.home, size: 30, color: Color(0xFF0A3E25)), //bouton home
+              Icon(Icons.search, size: 30, color: Color(0xFF0A3E25)), //bouton search
+              Icon(Icons.person, size: 30, color: Color(0xFF0A3E25)), //bouton profile
               ],
               onTap: _onItemTapped,
               ),
-            floatingActionButton: SpeedDial(        // notre petit menu qui flotte
-                marginRight: 10,
-                marginBottom: 20,
+            floatingActionButton: SpeedDial(        //bouton pour upload une image
+                marginRight: 10,                    //espace de droite du bouton pour upload une image
+                marginBottom: 20,                   //espace inférieur du bouton pour upload une image
                 animatedIcon: AnimatedIcons.menu_close,
                 animatedIconTheme: IconThemeData(size: 22.0),
                 closeManually: false,
                 curve: Curves.bounceIn,
-                overlayColor: Color(0xFF34373C),
-                overlayOpacity: 0,
-                backgroundColor: Color(0xFF1BB76E), 
-                foregroundColor: Color(0xFF34373C),        // les traits du bouton 
+                overlayColor: Color(0xFF34373C),          //couleur de l'ombre lors de l'appuie sur le bouton d'upload (shadow effect)
+                overlayOpacity: 0,                        //opacité de l'ombre (actuellement désactivée)
+                backgroundColor: Color(0xFF1BB76E),         // couleur du bouton d'upload
+                foregroundColor: Color(0xFF34373C),        // couleur du picto du bouton d'upload
                 elevation: 8.0,
                 shape: CircleBorder(),
                 children: [
                     SpeedDialChild(
                         child: Icon(Icons.camera_alt),
-                        backgroundColor: Color(0xFF1BB76E),
-                        foregroundColor: Color(0xFF0A3E25),
+                        backgroundColor: Color(0xFF1BB76E), //couleur du bouton appareil photo
+                        foregroundColor: Color(0xFF0A3E25), //couleur de l'icône appareil photo
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
 
@@ -118,8 +118,8 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                     ),
                     SpeedDialChild(
                         child: Icon(Icons.image),
-                        backgroundColor: Color(0xFF1BB76E),
-                        foregroundColor: Color(0xFF0A3E25),
+                        backgroundColor: Color(0xFF1BB76E), //couleur du bouton appareil photo
+                        foregroundColor: Color(0xFF0A3E25), //couleur de l'icône album photo
                         onTap: () async {
                             var image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
 

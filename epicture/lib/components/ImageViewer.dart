@@ -27,7 +27,7 @@ class _ImageViewerState extends State<ImageViewer> {
           return Scaffold(
 	      appBar: PreferredSize(
 		  preferredSize: Size.fromHeight(40),
-		  child: AppBar(      // l'appbar quand tu ouvre une image
+		  child: AppBar(      // l'appbar lors de l'ouverture d'une image
 		      backgroundColor: Colors.black,
 		      title: Text(this.widget.image.username),
 		  ),
@@ -65,7 +65,7 @@ class _ImageViewerState extends State<ImageViewer> {
 		  ],
 	      ),
 	  ),
-	  shape: RoundedRectangleBorder(      // ca fait des zoulies angles rond
+	  shape: RoundedRectangleBorder(      // arrondir les angles
 	      borderRadius: BorderRadius.circular(10.0),
 	  ),
 	  elevation: 7,
@@ -84,7 +84,7 @@ class _ImageViewerState extends State<ImageViewer> {
 			  padding: EdgeInsets.all(5),
 			  child: Align(
 			      alignment: Alignment.centerLeft,
-			      child: Container(                 // le petit avatar en haut a gauche des post
+			      child: Container(                 // le petit avatar en haut a gauche des posts
 				  width: 30.0,
 				  height: 30.0,
 				  decoration: BoxDecoration(

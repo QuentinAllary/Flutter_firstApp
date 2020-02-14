@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
     }).then((GalleryList list) {
       setState(() {
         this.galleryList = list;
-        // Sort files to keep only images
+        // Trier les fichiers pour ne conserver que les images
         this.galleryList.gallery.removeWhere((i) => ((i.imagesInfo != null &&
                 i.imagesInfo.length != 0 &&
                 i.imagesInfo[0].type.contains('mp4')) ||

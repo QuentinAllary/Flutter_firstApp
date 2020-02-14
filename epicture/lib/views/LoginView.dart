@@ -14,9 +14,10 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
 
   bool isLoggedIn = false;
-  final String clientId = "02fde0fac65a1eb";
+  //final String clientId = "7962edbdceeb196"; //ID Quentin
+  final String clientId = "02fde0fac65a1eb"; // ID Nikita
   final String responseType = "token";
-  final webViewPlugin = new FlutterWebviewPlugin();
+  final webViewPlugin = new FlutterWebviewPlugin(); //webview faisant apparaître le login Imgur sur l'app
 
   @override
   void initState() {

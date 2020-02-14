@@ -18,7 +18,7 @@ class Epicture extends StatelessWidget {
       theme: ThemeData(
         backgroundColor: Color(0xFF000000),
       ),
-      home: LoginView()  // on va récup l'id etc...
+      home: LoginView()  // on va récup l'id et les données pour assurer la connexion au login
     );
   }
 }
