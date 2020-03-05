@@ -51,18 +51,12 @@ Some plugins are used to beautify the app or speed up the development, for insta
 The feed is where you are going to spend most of your time. It displays the most viral imgur posts, you can react by voting up or down.
 If you want to, you can save it in your favorite using the _download_ icon. You can as well see all comments, react to them, or post your own.
 
-![](samples/sample_1.jpg)
-
 ### Search
 
 The search screens allows you to search image by name. You can tap on images vote, comment, or add to your favorites.
 You can use the Chips to sort the result.
 
-![Sample_0](samples/sample_2.jpg)
-
 
 ### Profile
 
 The profile view reference your personal information. Such as your number of posts, your public rating. You can as well see all your publications and your favorites using the tab bar navigation.
-
-![Sample_0](samples/sample_0.jpg)
